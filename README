@@ -1,0 +1,35 @@
+README - Simple SNMP manager
+Autor: Marie Faltusová
+
+This project contains:
+---------------------------------
+Makefile
+isaSnmpIfLog.cpp
+README
+manual.pdf
+
+Description:
+---------------------------------
+This is a SNMP manager for loading parameters from SNMP agent. On output you get
+22 parameters for each found interface. 
+
+For help type:
+
+./isaSnmpIfLog --help
+
+For run type:
+
+./isaSnmpIfLog -i interval -c community_string AGENT       to set interval[ms] between values, or
+./isaSnmpIfLog -c community_string AGENT                   where interval is default 100 ms
+
+Manager accepts SIGINT (Ctrl+C) as ending signal.
+
+Possible exit faults:
+Agent not responding - Error when sending message!            AGENT stopped responding, wait-timeout exceeded
+Address error - Error when sending message!                   Can't connect to AGENT you provided, probably wrong address
+
+Warnings:
+Interval exceeded...                                          Waiting for next value is longer than interval parameter
+
+
+
